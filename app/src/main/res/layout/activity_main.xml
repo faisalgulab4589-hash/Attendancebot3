@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f7fdf9">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="0dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1a7a4a"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:paddingTop="32dp"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📅  AttendBot"
+                android:textColor="#ffffff"
+                android:textSize="22sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="○ Bot بند ہے"
+                android:textColor="#ccffd9"
+                android:textSize="13sp"
+                android:layout_marginTop="4dp"/>
+
+            <TextView
+                android:id="@+id/tvNextRun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bot بند ہے"
+                android:textColor="#aaffc8"
+                android:textSize="12sp"
+                android:layout_marginTop="2dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="14dp">
+
+            <!-- ═══ URL Section ═══ -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ویب سائٹ URL"
+                android:textColor="#1a7a4a"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_bg"
+                android:orientation="vertical"
+                android:padding="14dp"
+                android:layout_marginBottom="10dp">
+
+                <EditText
+                    android:id="@+id/etUrl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="https://lms.gims.tech/"
+                    android:text="https://lms.gims.tech/"
+                    android:inputType="textUri"
+                    android:textSize="13sp"
+                    android:background="@null"
+                    android:textColor="#333333"
+                    android:textColorHint="#aaaaaa"/>
+            </LinearLayout>
+
+            <!-- ═══ Login Credentials ═══ -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="لاگ ان معلومات (Email &amp; Password)"
+                android:textColor="#1a7a4a"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_bg"
+                android:orientation="vertical"
+                android:padding="14dp"
+                android:layout_marginBottom="10dp">
+
+                <!-- Email -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email Address"
+                    android:textSize="11sp"
+                    android:textColor="#555555"
+                    android:layout_marginBottom="4dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f0f8f4"
+                    android:padding="10dp"
+                    android:layout_marginBottom="10dp">
+                    <EditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="yourname@example.com"
+                        android:inputType="textEmailAddress"
+                        android:textSize="14sp"
+                        android:background="@null"
+                        android:textColor="#222222"
+                        android:textColorHint="#aaaaaa"/>
+                </LinearLayout>
+
+                <!-- Password -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Password"
+                    android:textSize="11sp"
+                    android:textColor="#555555"
+                    android:layout_marginBottom="4dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f0f8f4"
+                    android:padding="10dp">
+                    <EditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="••••••••"
+                        android:inputType="textPassword"
+                        android:textSize="14sp"
+                        android:background="@null"
+                        android:textColor="#222222"
+                        android:textColorHint="#aaaaaa"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="● یہ معلومات صرف اس device پر محفوظ ہوں گی"
+                    android:textColor="#888888"
+                    android:textSize="10sp"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
+
+            <!-- ═══ Browser Selection ═══ -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Browser منتخب کریں"
+                android:textColor="#1a7a4a"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_bg"
+                android:orientation="vertical"
+                android:padding="14dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:id="@+id/tvSelectedBrowser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="کوئی browser منتخب نہیں"
+                    android:textColor="#555555"
+                    android:textSize="13sp"
+                    android:layout_marginBottom="10dp"/>
+
+                <Button
+                    android:id="@+id/btnSelectBrowser"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:text="🌐  Browser کی فہرست دیکھیں"
+                    android:textColor="#1a7a4a"
+                    android:background="@drawable/btn_outline"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="● صرف وہی browser منتخب کریں جو آپ کے phone میں install ہے"
+                    android:textColor="#888888"
+                    android:textSize="10sp"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
+
+            <!-- ═══ CHECK IN / CHECK OUT Buttons ═══ -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="دستی حاضری"
+                android:textColor="#1a7a4a"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+
+                <Button
+                    android:id="@+id/btnCheckIn"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_weight="1"
+                    android:text="✅  CHECK IN"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/btn_green"
+                    android:layout_marginEnd="6dp"/>
+
+                <Button
+                    android:id="@+id/btnCheckOut"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_weight="1"
+                    android:text="🚪  CHECK OUT"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/btn_red"
+                    android:layout_marginStart="6dp"/>
+            </LinearLayout>
+
+            <!-- ═══ Time Window ═══ -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="خودکار حاضری کا وقت (random ونڈو)"
+                android:textColor="#1a7a4a"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_bg"
+                android:orientation="vertical"
+                android:padding="14dp"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#e6f5ed"
+                        android:orientation="vertical"
+                        android:padding="10dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TIME IN"
+                            android:textColor="#1a7a4a"
+                            android:textSize="10sp"
+                            android:textStyle="bold"/>
+
+                        <EditText
+                            android:id="@+id/etWindowStart"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="08:30"
+                            android:textSize="22sp"
+                            android:textColor="#155c35"
+                            android:textStyle="bold"
+                            android:background="@null"
+                            android:gravity="center"
+                            android:focusable="false"
+                            android:clickable="true"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  →  "
+                        android:textColor="#1a7a4a"
+                        android:textSize="18sp"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#e6f5ed"
+                        android:orientation="vertical"
+                        android:padding="10dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TIME OUT"
+                            android:textColor="#1a7a4a"
+                            android:textSize="10sp"
+                            android:textStyle="bold"/>
+
+                        <EditText
+                            android:id="@+id/etWindowEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="09:00"
+                            android:textSize="22sp"
+                            android:textColor="#155c35"
+                            android:textStyle="bold"
+                            android:background="@null"
+                            android:gravity="center"
+                            android:focusable="false"
+                            android:clickable="true"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="● ان دونوں اوقات کے درمیان random وقت پر CHECK IN ہوگا"
+                    android:textColor="#666666"
+                    android:textSize="11sp"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
+
+            <!-- ═══ Settings ═══ -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ترتیبات"
+                android:textColor="#1a7a4a"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_bg"
+                android:orientation="vertical"
+                android:padding="14dp"
+                android:layout_marginBottom="10dp">
+
+                <!-- Auto Internet -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="انٹرنیٹ خودکار آن کریں"
+                            android:textSize="13sp"
+                            android:textColor="#333333"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="وقت سے پہلے WiFi on کریں"
+                            android:textSize="11sp"
+                            android:textColor="#888888"/>
+                    </LinearLayout>
+                    <Switch
+                        android:id="@+id/swAutoInternet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:thumbTint="#1a7a4a"
+                        android:trackTint="#a8d5b5"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#d0eadb"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <!-- Auto Flight Mode -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Flight Mode بند کریں"
+                            android:textSize="13sp"
+                            android:textColor="#333333"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ضرورت پڑنے پر off کریں"
+                            android:textSize="11sp"
+                            android:textColor="#888888"/>
+                    </LinearLayout>
+                    <Switch
+                        android:id="@+id/swAutoFlight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:thumbTint="#1a7a4a"
+                        android:trackTint="#a8d5b5"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#d0eadb"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <!-- Daily repeat -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="روزانہ دہرائیں"
+                            android:textSize="13sp"
+                            android:textColor="#333333"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ہر دن خودکار چلے"
+                            android:textSize="11sp"
+                            android:textColor="#888888"/>
+                    </LinearLayout>
+                    <Switch
+                        android:id="@+id/swDaily"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:thumbTint="#1a7a4a"
+                        android:trackTint="#a8d5b5"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Save Button -->
+            <Button
+                android:id="@+id/btnSaveSettings"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="ترتیبات محفوظ کریں"
+                android:textColor="#1a7a4a"
+                android:background="@drawable/btn_outline"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Last Attendance -->
+            <TextView
+                android:id="@+id/tvLastAttendance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="آخری حاضری: ابھی تک نہیں"
+                android:textColor="#555555"
+                android:textSize="12sp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- ═══ Auto Bot Start/Stop ═══ -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="14dp">
+
+                <Button
+                    android:id="@+id/btnStartStop"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:text="▶  Bot شروع کریں (خودکار)"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp"
+                    android:background="@drawable/btn_green"
+                    android:layout_marginBottom="8dp"/>
+
+                <Button
+                    android:id="@+id/btnTestNow"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="ابھی Test کریں"
+                    android:textColor="#1a7a4a"
+                    android:textSize="12sp"
+                    android:background="@drawable/btn_outline"/>
+            </LinearLayout>
+
+            <!-- ═══ History ═══ -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="حاضری کی تاریخ"
+                android:textColor="#1a7a4a"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <LinearLayout
+                android:id="@+id/llHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_bg"
+                android:orientation="vertical"
+                android:padding="14dp"
+                android:layout_marginBottom="20dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
